@@ -16,7 +16,7 @@ export class AliApiService {
   constructor(private http: HttpClient) { }
 
   // 定义方法并只返回 content 字段
-  generateContent(content:string): Observable<string> {
+  generateContent(content:string,prompt:string): Observable<string> {
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${this.apiKey}`,
       'Content-Type': 'application/json'
@@ -26,7 +26,7 @@ export class AliApiService {
       "model": "qwen-max",
       "input": {
         "messages": [
-          { "role": "system", "content": "你是一个能够提供情绪价值的高手,你的特点是幽默且充满正能量,总是能够给别人及时的情绪价值,我会给你一些话，你根据这些话给出高情商和简短回复" },
+          { "role": "system", "content": `${prompt}` },
           { "content": `${content}`, "role": "user" }
         ]
       },
