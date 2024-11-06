@@ -22,22 +22,23 @@ export class ChatComponent {
   constructor(private ali: AliApiService) {
   }
   inputValue:string="";
+  responseValue:string="";
 
-  onEnter($event:any) {
+  request(){
     this.ali.generateContent(this.inputValue).subscribe(
       result => {
         console.log(result);
+        this.responseValue = result
       }
     );
-    console.log(JSON.stringify(this.inputValue));
+
+  }
+
+  onEnter() {
+    this.request()
   }
 
   onButtonClick() {
-    this.ali.generateContent(this.inputValue).subscribe(
-      result => {
-        console.log(result);
-      }
-    );
-    console.log(JSON.stringify(this.inputValue));
+    this.request()
   }
 }

@@ -7,10 +7,9 @@
           <mat-grid-tile>
             <mat-form-field class="example-full-width">
               <mat-label>Leave a comment</mat-label>
-              <textarea matInput name="inputName" placeholder="Ex. It makes me feel..." (keyup.enter)="onEnter($event)" [(ngModel)]="inputValue"></textarea>
+              <textarea matInput name="inputName" placeholder="Ex. It makes me feel..." (keyup.enter)="onEnter()" [(ngModel)]="inputValue"></textarea>
             </mat-form-field>    </mat-grid-tile>
           <mat-grid-tile (click)="onButtonClick()">
-<!--            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>-->
             <div class="example-button-container">
               <button mat-mini-fab color="accent" aria-label="Example icon button with a plus one icon">
                 <mat-icon>plus_one</mat-icon>
@@ -21,6 +20,7 @@
       </mat-card-content>
 
       <mat-card-content>
+        {{responseValue}}
         </mat-card-content>
     </mat-card>
 
