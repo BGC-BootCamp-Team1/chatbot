@@ -34,7 +34,7 @@ describe('AliApiService', () => {
       }
     };
 
-    service.generateContent('测试内容').subscribe(content => {
+    service.generateContent('测试内容','高情商').subscribe(content => {
       expect(content).toBe('高情商的回复');
     });
 
