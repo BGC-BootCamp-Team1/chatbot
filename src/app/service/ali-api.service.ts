@@ -32,7 +32,7 @@ export class AliApiService {
       },
       "parameters": {
         "temperature": 0.8,
-        "seed": 12360,
+        "seed": Math.floor(Math.random() * 100000),
         "result_format": "message"
       }
     };
